@@ -1,18 +1,25 @@
-# Risk Score Analyzer (Local Version)
+# Risk Score Analyzer
 
-This version of the Risk Analyzer uses a local keyword-based scoring system to determine the risk level of a user-submitted description.
+A Streamlit app that uses Hugging Face’s zero-shot classifier (`facebook/bart-large-mnli`) to score free-form text on a 3-level risk scale.
 
-## Features
-- No internet access or model downloads required
-- Safe for free-tier deployment on Streamlit Cloud
-- Categorizes text into High, Medium, or Low Risk based on keyword presence
+## Setup
 
-## How to Run
+1. Clone the repo
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the app:
+   ```bash
+   streamlit run risk_score_ui.py
+   ```
 
-```bash
-pip install -r requirements.txt
-streamlit run risk_score_ui.py
-```
+## How It Works
+
+- Loads the `facebook/bart-large-mnli` model
+- Classifies any input text into **High Risk**, **Medium Risk**, or **Low Risk**
+- Caches the model in memory for fast repeated inference
 
 ## License
+
 MIT

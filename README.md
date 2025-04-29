@@ -1,34 +1,18 @@
-# Risk Score Generator for Support Tickets
+# Risk Score Analyzer (Local Version)
 
-This AI-powered tool classifies incoming support messages by urgency and security relevance, then assigns a risk score based on category.
+This version of the Risk Analyzer uses a local keyword-based scoring system to determine the risk level of a user-submitted description.
 
-## Categories
-- Urgent
-- Security Breach
-- Billing Problem
-- Data Access Request
-- General
+## Features
+- No internet access or model downloads required
+- Safe for free-tier deployment on Streamlit Cloud
+- Categorizes text into High, Medium, or Low Risk based on keyword presence
 
-## Example Risk Mapping
-- Security Breach → 90/100
-- Data Access Request → 75/100
-- Urgent → 60/100
-- Billing Problem → 50/100
-- General → 10/100
+## How to Run
 
-## How to Use
-1. Install dependencies:
 ```bash
-pip install transformers torch
+pip install -r requirements.txt
+streamlit run risk_score_ui.py
 ```
 
-2. Run the script:
-```bash
-python risk_score.py
-```
-
-3. Paste in a support ticket or customer message and get a risk score.
-
----
-
-Part of my AI + cybersecurity career rebuild series.
+## License
+MIT
